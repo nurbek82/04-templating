@@ -16,6 +16,9 @@ Article.prototype.toHtml = function() {
   //       - Get your template from the DOM.
   //       - Now "compile" your template with Handlebars.
 
+  var $source   = $('#blogTemplate').html();
+  var template = Handlebars.compile($source);
+  console.log(template);
 
   // REVIEW: If your template will use properties that aren't on the object yet, add them.
   //   Since your template can't hold any JS logic, we need to execute the logic here.
@@ -26,19 +29,8 @@ Article.prototype.toHtml = function() {
 
   // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
   // console.log (this);
-  var $source   = $('#blogTemplate').html();
-  var template = Handlebars.compile($source);
-  console.log(template);
   return template(this);
-  //   var data = {
-  //     categorgy : this.category,
-  //     title: this.title,
-  //     author: this.author,
-  //     publish: this.publishedOn,
-  //   }
-  // var html = template(data)
-  // console.log(html);
-  // return html;
+  
   //  debugger;
 };
 
